@@ -7,7 +7,7 @@
 Summary:	Desktop client for Slack
 Name:		slack-desktop
 Version:	1.2.6
-Release:	0.2
+Release:	0.3
 License:	?
 Group:		X11/Applications
 Source0:	https://slack-ssb-updates.global.ssl.fastly.net/linux_releases/slack-%{version}-0.1.fc21.x86_64.rpm
@@ -44,10 +44,13 @@ mv slack/LICENSE* .
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_appdir}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_appdir},%{_desktopdir},%{_pixmapsdir}}
 
 cp -a slack/* $RPM_BUILD_ROOT%{_appdir}
 ln -s %{_appdir}/slack $RPM_BUILD_ROOT%{_bindir}
+
+cp -p slack.desktop $RPM_BUILD_ROOT%{_desktopdir}
+cp -p slack.png $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -62,6 +65,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc LICENSE LICENSES.chromium.html
 %attr(755,root,root) %{_bindir}/slack
+%{_desktopdir}/slack.desktop
+%{_pixmapsdir}/slack.png
 %dir %{_appdir}
 %{_appdir}/version
 %{_appdir}/*.bin
