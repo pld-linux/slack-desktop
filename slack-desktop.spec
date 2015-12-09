@@ -7,16 +7,17 @@
 Summary:	Desktop client for Slack
 Name:		slack-desktop
 Version:	1.2.6
-Release:	0.1
+Release:	0.2
 License:	?
 Group:		X11/Applications
 Source0:	https://slack-ssb-updates.global.ssl.fastly.net/linux_releases/slack-%{version}-0.1.fc21.x86_64.rpm
 # NoSource0-md5:	598d52c3e3669ee5ecf4e9682d4c2c7f
 NoSource:	0
+Patch0:		desktop.patch
 URL:		https://slack.com/
 BuildRequires:	rpm-utils
-BuildRequires:	rpmbuild(macros) >= 1.356
-BuildRequires:	sed >= 4.0
+BuildRequires:	rpmbuild(macros) >= 1.596
+Requires:	desktop-file-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_appdir		%{_libdir}/%{name}
@@ -38,6 +39,8 @@ mv usr/share/pixmaps/* .
 mv slack/*.png .
 mv usr/share/applications/* .
 mv slack/LICENSE* .
+
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT

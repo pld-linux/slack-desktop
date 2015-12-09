@@ -1,0 +1,11 @@
+--- slack-desktop-1.2.6/slack.desktop~	2015-12-09 14:15:19.000000000 +0200
++++ slack-desktop-1.2.6/slack.desktop	2015-12-09 14:17:09.986064223 +0200
+@@ -2,7 +2,7 @@
+ Name=Slack
+ Comment=Slack Desktop
+ GenericName=Slack Client for Linux
+-Exec=/usr/share/slack/slack %U
++Exec=slack %U
+ Icon=slack
+ Type=Application
+ StartupNotify=true
