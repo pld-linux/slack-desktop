@@ -2,7 +2,7 @@
 # - src.rpm specifies, is it correct (link is 404)
 #   URL - https://github.com/tinyspeck/slack-winssb.git
 #   License - MIT
-# - it's based on atom?? meh?
+# - it's based on atom
 
 Summary:	Desktop client for Slack
 Name:		slack-desktop
@@ -10,6 +10,7 @@ Version:	1.2.6
 Release:	0.3
 License:	?
 Group:		X11/Applications
+# Source0Download: https://slack.com/downloads
 Source0:	https://slack-ssb-updates.global.ssl.fastly.net/linux_releases/slack-%{version}-0.1.fc21.x86_64.rpm
 # NoSource0-md5:	598d52c3e3669ee5ecf4e9682d4c2c7f
 NoSource:	0
