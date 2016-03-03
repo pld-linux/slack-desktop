@@ -6,13 +6,13 @@
 
 Summary:	Desktop client for Slack
 Name:		slack-desktop
-Version:	1.2.6
-Release:	0.3
+Version:	2.0.0
+Release:	0.1
 License:	?
 Group:		X11/Applications
 # Source0Download: https://slack.com/downloads
 Source0:	https://slack-ssb-updates.global.ssl.fastly.net/linux_releases/slack-%{version}-0.1.fc21.x86_64.rpm
-# NoSource0-md5:	598d52c3e3669ee5ecf4e9682d4c2c7f
+# NoSource0-md5:	fd49c5aff69f026312680883adc4c652
 NoSource:	0
 Patch0:		desktop.patch
 URL:		https://slack.com/
@@ -76,7 +76,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_appdir}/slack
 %attr(755,root,root) %{_appdir}/libgcrypt.so.11
 %attr(755,root,root) %{_appdir}/libnode.so
-%attr(755,root,root) %{_appdir}/libnotify.so.4
 
 %{_appdir}/locales
 
