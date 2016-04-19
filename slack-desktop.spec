@@ -40,6 +40,10 @@ mv usr/share/pixmaps/* .
 mv usr/share/applications/* .
 mv slack/LICENSE* .
 
+%ifarch linux
+rm -v resources/*/*/lib/*.dll
+%endif
+
 %patch0 -p1
 
 %install
