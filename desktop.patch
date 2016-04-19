@@ -1,11 +1,11 @@
---- slack-desktop-1.2.6/slack.desktop~	2015-12-09 14:15:19.000000000 +0200
-+++ slack-desktop-1.2.6/slack.desktop	2015-12-09 14:17:09.986064223 +0200
-@@ -2,7 +2,7 @@
- Name=Slack
+--- slack-desktop-2.0.3/slack.desktop~	2016-04-19 10:33:11.000000000 +0300
++++ slack-desktop-2.0.3/slack.desktop	2016-04-19 10:33:42.873164534 +0300
+@@ -3,7 +3,7 @@
  Comment=Slack Desktop
  GenericName=Slack Client for Linux
--Exec=/usr/share/slack/slack %U
-+Exec=slack %U
- Icon=slack
+ Exec=/usr/bin/slack --disable-gpu %U
+-Icon=/usr/share/pixmaps/slack.png
++Icon=slack.png
  Type=Application
  StartupNotify=true
+ Categories=GNOME;GTK;Network;InstantMessaging;

@@ -6,13 +6,13 @@
 
 Summary:	Desktop client for Slack
 Name:		slack-desktop
-Version:	2.0.0
-Release:	0.1
+Version:	2.0.3
+Release:	1
 License:	?
 Group:		X11/Applications
 # Source0Download: https://slack.com/downloads
 Source0:	https://slack-ssb-updates.global.ssl.fastly.net/linux_releases/slack-%{version}-0.1.fc21.x86_64.rpm
-# NoSource0-md5:	fd49c5aff69f026312680883adc4c652
+# NoSource0-md5:	c886d30cc63c1d5eeb11bbc1b7e565b4
 NoSource:	0
 Patch0:		desktop.patch
 URL:		https://slack.com/
@@ -21,7 +21,7 @@ BuildRequires:	rpmbuild(macros) >= 1.596
 Requires:	desktop-file-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_appdir		%{_libdir}/%{name}
+%define		_appdir		%{_prefix}/lib/%{name}
 
 %description
 Get full access to your messages and archives, upload files easily,
@@ -35,9 +35,8 @@ version=$(rpm -qp --nodigest --nosignature --qf '%{V}' $SOURCE)
 test version:${version} = version:%{version}
 rpm2cpio $SOURCE | cpio -i -d
 
-mv usr/share/slack .
+mv usr/lib/slack .
 mv usr/share/pixmaps/* .
-mv slack/*.png .
 mv usr/share/applications/* .
 mv slack/LICENSE* .
 
@@ -76,6 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_appdir}/slack
 %attr(755,root,root) %{_appdir}/libgcrypt.so.11
 %attr(755,root,root) %{_appdir}/libnode.so
+%attr(755,root,root) %{_appdir}/libffmpeg.so
 
 %{_appdir}/locales
 
