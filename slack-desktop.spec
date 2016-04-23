@@ -19,6 +19,7 @@ URL:		https://slack.com/
 BuildRequires:	rpm-utils
 BuildRequires:	rpmbuild(macros) >= 1.596
 Requires:	desktop-file-utils
+ExclusiveArch:	%{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_appdir		%{_prefix}/lib/%{name}
