@@ -6,13 +6,13 @@
 
 Summary:	Desktop client for Slack
 Name:		slack-desktop
-Version:	2.0.3
+Version:	2.0.6
 Release:	1
 License:	?
 Group:		X11/Applications
 # Source0Download: https://slack.com/downloads
 Source0:	https://slack-ssb-updates.global.ssl.fastly.net/linux_releases/slack-%{version}-0.1.fc21.x86_64.rpm
-# NoSource0-md5:	c886d30cc63c1d5eeb11bbc1b7e565b4
+# NoSource0-md5:	47e7ca4186ad1171a57e5e72060821a6
 NoSource:	0
 Patch0:		desktop.patch
 URL:		https://slack.com/
@@ -68,7 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE LICENSES.chromium.html
+%doc LICENSE
 %attr(755,root,root) %{_bindir}/slack
 %{_desktopdir}/slack.desktop
 %{_pixmapsdir}/slack.png
@@ -78,15 +78,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_appdir}/content_shell.pak
 %{_appdir}/icudtl.dat
 %attr(755,root,root) %{_appdir}/slack
-%attr(755,root,root) %{_appdir}/libgcrypt.so.11
-%attr(755,root,root) %{_appdir}/libnode.so
+%attr(755,root,root) %{_appdir}/libCallsCore.so
 %attr(755,root,root) %{_appdir}/libffmpeg.so
+%attr(755,root,root) %{_appdir}/libnode.so
 
 %{_appdir}/locales
 
 %dir %{_appdir}/resources
-%{_appdir}/resources/atom.asar
 %{_appdir}/resources/app.asar
+%{_appdir}/resources/default_app.asar
+%{_appdir}/resources/electron.asar
 
 # too many files to list, assume file permissions
 %defattr(-,root,root,-)
