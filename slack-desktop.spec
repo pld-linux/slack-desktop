@@ -6,13 +6,13 @@
 
 Summary:	Desktop client for Slack
 Name:		slack-desktop
-Version:	2.1.0
+Version:	2.1.2
 Release:	1
 License:	?
 Group:		X11/Applications
 # Source0Download: https://slack.com/downloads
 Source0:	https://slack-ssb-updates.global.ssl.fastly.net/linux_releases/slack-%{version}-0.1.fc21.x86_64.rpm
-# NoSource0-md5:	ca2d2762850a0bdc24596710d0b73a95
+# NoSource0-md5:	ac7c5409d5b7b059575950a43907a8e4
 NoSource:	0
 Patch0:		desktop.patch
 URL:		https://slack.com/
