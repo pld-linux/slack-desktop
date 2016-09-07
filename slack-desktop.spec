@@ -8,7 +8,10 @@ Summary:	Desktop client for Slack
 Name:		slack-desktop
 Version:	2.1.2
 Release:	1
-License:	?
+# slack support response about redistributing it in pld linux:
+# > In order to ensure we have the best experience for as many folks as possible,
+# > we'd like our customers to obtain the client form us.
+License:	not redistributable
 Group:		X11/Applications
 # Source0Download: https://slack.com/downloads
 Source0:	https://slack-ssb-updates.global.ssl.fastly.net/linux_releases/slack-%{version}-0.1.fc21.x86_64.rpm
