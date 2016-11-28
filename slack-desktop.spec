@@ -6,16 +6,16 @@
 
 Summary:	Desktop client for Slack
 Name:		slack-desktop
-Version:	2.1.2
+Version:	2.3.2
 Release:	1
 # slack support response about redistributing it in pld linux:
 # > In order to ensure we have the best experience for as many folks as possible,
 # > we'd like our customers to obtain the client form us.
 License:	not redistributable
 Group:		X11/Applications
-# Source0Download: https://slack.com/downloads
-Source0:	https://slack-ssb-updates.global.ssl.fastly.net/linux_releases/slack-%{version}-0.1.fc21.x86_64.rpm
-# NoSource0-md5:	ac7c5409d5b7b059575950a43907a8e4
+# Source0Download: https://slack.com/downloads/linux
+Source0:	https://downloads.slack-edge.com/linux_releases/slack-%{version}-0.1.fc21.x86_64.rpm
+# NoSource0-md5:	45e93f7788214816f3148c42803a3201
 NoSource:	0
 Patch0:		desktop.patch
 URL:		https://slack.com/
@@ -78,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_appdir}
 %{_appdir}/version
 %{_appdir}/*.bin
-%{_appdir}/content_shell.pak
+%{_appdir}/*.pak
 %{_appdir}/icudtl.dat
 %attr(755,root,root) %{_appdir}/slack
 %attr(755,root,root) %{_appdir}/libCallsCore.so
