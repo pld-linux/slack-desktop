@@ -1,12 +1,12 @@
 # TODO
-# - src.rpm specifies, is it correct (link is 404)
+# - src.rpm specifies (is it correct? - link is 404):
 #   URL - https://github.com/tinyspeck/slack-winssb.git
 #   License - MIT
 # - it's based on atom
 
 Summary:	Desktop client for Slack
 Name:		slack-desktop
-Version:	2.3.2
+Version:	2.7.1
 Release:	1
 # slack support response about redistributing it in pld linux:
 # > In order to ensure we have the best experience for as many folks as possible,
@@ -15,7 +15,7 @@ License:	not redistributable
 Group:		X11/Applications
 # Source0Download: https://slack.com/downloads/linux
 Source0:	https://downloads.slack-edge.com/linux_releases/slack-%{version}-0.1.fc21.x86_64.rpm
-# NoSource0-md5:	45e93f7788214816f3148c42803a3201
+# NoSource0-md5:	2ef1f45922ced11259235057f8b3ae52
 NoSource:	0
 Patch0:		desktop.patch
 URL:		https://slack.com/
@@ -89,7 +89,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %dir %{_appdir}/resources
 %{_appdir}/resources/app.asar
-%{_appdir}/resources/default_app.asar
 %{_appdir}/resources/electron.asar
 
 # too many files to list, assume file permissions
