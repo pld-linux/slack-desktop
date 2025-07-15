@@ -48,7 +48,7 @@ mv slack/LICENSE* .
 rm -v resources/*/*/lib/*.dll
 %endif
 
-%patch0 -p1
+%patch -P0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
